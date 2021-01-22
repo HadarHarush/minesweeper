@@ -1,0 +1,69 @@
+table {
+    height: 500px;
+    width: 500px;
+    table-layout: fixed;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+table, th, td {
+    /* border: 1px solid black; */
+}
+
+td {
+    text-align: center;
+    box-sizing: border-box;
+    height: 41.66px;
+}
+
+
+.block {
+    background-color: gainsboro;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+td.clickable.light-blue {
+    background-color: #76d5fa;
+}
+
+td.clickable.blue {
+    background-color: #5296b1;
+}
+
+td.clickable:hover {
+    background: #999999;
+}
+
+
+td[data-mines-around="1"] {
+    color:  blue
+}
+td[data-mines-around="2"] {
+    color:  green
+}
+td[data-mines-around="3"] {
+    color: red
+}
+
+h2 {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.bomb {
+    background-color: red;
+}
+
+.shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(red, green, rgba(0, 0, 0, 0.514), alpha);
+    display: none;
+}

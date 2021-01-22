@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>minesweeper</title>
+</head>
+
+<body onload="initGame(0, 'hard')">
+
+    <h1>minesweeper</h1>
+    <h2 class="shown">shown: <span></span></h2>
+    <h2 class="lack">lack: <span></span></h2>
+    <h2 class="remained-flags">remained flags: <span></span></h2>
+    <h2>choose level:
+        <button onclick="initGame(this)">easy</button>
+        <button onclick="initGame(this)">medium</button>
+        <button onclick="initGame(this)">hard</button>
+    </h2>
+    <h2 class="time">time: <span></span></h2>
+
+    <table>
+
+    </table>
+    <div class="shadow">
+        <div class="lose">
+            <h2>לא מגניב</h2>
+            <button onclick="initGame(this)">easy</button>
+            <button onclick="initGame(this)">medium</button>
+            <button onclick="initGame(this)">hard</button>
+        </div>
+    </div>
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
