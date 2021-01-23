@@ -7,7 +7,7 @@ var gGame;
 var gElShownCounter = document.querySelector('h2.shown span');
 var gElLackCounter = document.querySelector('.shown-cont .content-cont h2');
 var gElRemainedFlags = document.querySelector('.flags-cont .content-cont h2');
-var gElTime = document.querySelector('h2.time span');
+var gElTime = document.querySelector('.timer-cont h2 span');
 
 
 

@@ -234,3 +234,21 @@ select, option {
     display: none;
 }
 
+.timer-cont {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-10%, -50%);
+    width: 50%;
+    height: 50%;
+}
+
+.timer-cont h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
