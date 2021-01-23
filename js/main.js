@@ -5,12 +5,39 @@ const MARKED = '🚩';
 var gBoard;
 var gGame;
 var gElShownCounter = document.querySelector('h2.shown span');
-var gElLackCounter = document.querySelector('h2.lack span');
-var gElRemainedFlags = document.querySelector('h2.remained-flags span');
+var gElLackCounter = document.querySelector('.shown-cont .content-cont h2');
+var gElRemainedFlags = document.querySelector('.flags-cont .content-cont h2');
 var gElTime = document.querySelector('h2.time span');
 
 
+
+var elSelect = document.querySelector('select');
+elSelect.addEventListener('change', (event) => {
+    var level = event.target.value;
+    console.log('cahnged');
+    initGame(0, level);
+});
+
+
 //*functions:*
+
+
+function restartClick() {
+    var elSelect = document.querySelector('.restart-cont select');
+    var level = elSelect.value;
+    initGame(0, level);
+    hideGameOver();
+    var elUniSelect = document.querySelector('select');
+    elUniSelect.value = level;
+}
+
+
+function hideGameOver() {
+    var elCont = document.querySelector('.shadow');
+    elCont.classList.add('hidden');
+}
+
+
 
 function initGame(elLevel, level) {
     //reset timer:
@@ -36,8 +63,10 @@ function initGame(elLevel, level) {
     //option to init also without element:
     if (!elLevel) {
         var level = level;
+        console.log(level);
     } else {
         var level = elLevel.innerHTML;
+        console.log(level);
     }
     var size;
     switch (level) {
@@ -299,8 +328,9 @@ function endGame(loseOrWin) {
         clearInterval(gGame.intervalTimer);
         gGame.intervalTimer = 0;
     }
-
+    var elText = document.querySelector('.shadow h2');
     if (loseOrWin === 'L') {
+
         for (let i = 0; i < gGame.minesCoords.length; i++) {
             var cellI = gGame.minesCoords[i].i;
             var cellJ = gGame.minesCoords[i].j;
@@ -308,9 +338,12 @@ function endGame(loseOrWin) {
             elCurrMine.innerText = BOMB;
             elCurrMine.classList.add('bomb');
             elCurrMine.classList.remove('clickable');
+            elText.innerText = 'you snoozed, and therefore you loosed';
         }
-        console.log('lose');
     } else {
         console.log('win');
+        elText.innerText = 'you won';
     }
+    var elCont = document.querySelector('.shadow');
+    elCont.classList.remove('hidden');
 }

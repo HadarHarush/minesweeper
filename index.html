@@ -8,32 +8,84 @@
     <title>minesweeper</title>
 </head>
 
-<body onload="initGame(0, 'hard')">
+<body onload="initGame(0, 'easy')">
 
-    <h1>minesweeper</h1>
-    <h2 class="shown">shown: <span></span></h2>
-    <h2 class="lack">lack: <span></span></h2>
-    <h2 class="remained-flags">remained flags: <span></span></h2>
-    <h2>choose level:
-        <button onclick="initGame(this)">easy</button>
-        <button onclick="initGame(this)">medium</button>
-        <button onclick="initGame(this)">hard</button>
-    </h2>
-    <h2 class="time">time: <span></span></h2>
-
-    <table>
-
-    </table>
-    <div class="shadow">
+    <div class="curr-stats-cont">
+        <div class="left-cont">
+            <div class="shown-cont">
+                <div class="content-cont">
+                    <h2>85</h2>
+                    <div class="square-cont">
+                        <div class="square"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flags-cont">
+                <div class="content-cont">
+                    <h2>0</h2>
+                    <div class="flag-cont">
+                        <h2 class="flag">🚩</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-cont">
+            <div class="select-cont">
+                <select>
+                    <option onclick="console.log('clicked!')">easy</option>
+                    <option onclick="initGame(this)">medium</option>
+                    <option onclick="initGame(this)">hard</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="shadow hidden">
         <div class="lose">
-            <h2>לא מגניב</h2>
+            <h2>you snoozed,<br>and thereefore you loosed</h2>
+            <div>
+                <div class="restart-cont">
+                    <select>
+                        <option onclick="console.log('clicked!')">easy</option>
+                        <option onclick="initGame(this)">medium</option>
+                        <option onclick="initGame(this)">hard</option>
+                    </select>
+                    <button onclick="restartClick()">new game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div hidden class="uni-stats-cont">
+        <div class="trophy-cont">
+            <h2 class="trophy">T</h2>
+            <div class="stats-cont">
+                <div class="stat first">
+                    <h2>avrahm <span>15</span></h2>
+                </div>
+                <div class="stat second">
+                    <h2>avrahm <span>15</span></h2>
+                </div>
+                <div class="stat third">
+                    <h2>avrahm <span>15</span></h2>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <table></table>
+    <div class="hidden">
+        <h2 class="shown">shown: <span></span></h2>
+        <h2 class="lack">lack: <span></span></h2>
+        <h2 class="remained-flags">remained flags: <span></span></h2>
+        <h2>choose level:
             <button onclick="initGame(this)">easy</button>
             <button onclick="initGame(this)">medium</button>
             <button onclick="initGame(this)">hard</button>
-        </div>
+        </h2>
+        <h2 class="time">time: <span></span></h2>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>
